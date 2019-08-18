@@ -5,7 +5,7 @@ const fs = require('fs');
     await reddit.initialize('investing');
 
     let results = await reddit.getResults(30);
-    fs.writeFile('Output.txt', JSON.stringify(results, null, 2), (err) => {
+    fs.writeFileSync('Output.txt', JSON.stringify(results, null, 2), (err) => {
       if (err) throw err;
     })
 
